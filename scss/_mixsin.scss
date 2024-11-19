@@ -1,0 +1,57 @@
+@use "./common";
+@mixin flex($direction, $items, $content, $gap) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $items;
+  justify-content: $content;
+  gap: $gap;
+}
+
+@mixin grid($column, $row, $gap) {
+  display: grid;
+  grid-template: repeat($column, 1fr) / repeat($row, 1fr);
+  gap: $gap;
+}
+
+@mixin text($color, $size, $f-weight, $l-height, $t-align) {
+  color: $color;
+  font-size: $size;
+  font-weight: $f-weight;
+  line-height: $l-height;
+  text-align: $t-align;
+}
+
+@mixin outline {
+  outline: none;
+  border: none;
+}
+
+@mixin button($bg, $color) {
+  border-radius: 0 3px 3px 0;
+  height: 42px;
+  padding: 10px 43px;
+  background-color: $bg;
+  color: $color;
+}
+
+@mixin pholder($color) {
+  color: $color;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 21px;
+  text-align: left;
+}
+
+@mixin focus($box-color) {
+  box-shadow: inset 255px 0 5px $box-color;
+}
+
+@mixin back {
+  background: url("../images/footer--bg.png") no-repeat;
+  background-size: cover;
+}
+
+@mixin btn( $bg-color, $padding) {
+  background-color: $bg-color;
+  padding: $padding;
+}

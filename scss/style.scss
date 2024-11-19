@@ -1,0 +1,320 @@
+@use "common" as com;
+@use "function" as func;
+@use "mixsin" as mix;
+@use "fonts";
+
+$bg--25: #252061;
+$bg--white: #fff;
+$bg--black: #000;
+$bg--ab: #aba8ca;
+$bg--f5: #f55f39;
+$bg--2b: #2bca8b;
+$bg--eo: #e0e0e0;
+$bg--44: #444444;
+$bg--1f: #1fdb6a;
+$bg--52: #524b9a;
+$bg--41: #4163ac;
+$bg--22: #222222;
+$bg--92: #929292;
+$bg--9da: #9da0ac;
+$bg--01a: #0000001a;
+$bg--36: #363636;
+$bg--da: #dadada;
+$bg--e6: #e6e8ee;
+$bg--ee: #eef1f6;
+$bg--18: #183eb6;
+$bg--4d: #4d4d4d;
+$bg--9dd: #d9d9d9;
+$bg--05: #050505;
+$bg--1c: #1c1842;
+$bg--35: #352f77;
+$bg--96: #969696;
+$bg--b8: #b8bdc9;
+$bg--f0: #f0f0f0;
+$bg--f1: #f1f1f1;
+$bg--f1a: #ffffff1a;
+
+// ***** header start *****
+
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  padding: 19px 0;
+  background-color: $bg--white;
+  box-shadow: 1px 1px 3px 0px $bg--01a;
+  z-index: 1111;
+}
+
+.head--body {
+  @include mix.flex(row, center, space-between, 0);
+  @media (max-width: 1030px) {
+    @include mix.flex(column, center, space-around, 50px);
+  }
+}
+
+.nav--brand {
+  @include mix.flex(row, center, space-between, 0);
+  width: 55%;
+  @media (max-width: 1030px) {
+    width: 100%;
+  }
+
+  &__humburger {
+    position: relative;
+    z-index: 3;
+    svg {
+      fill: $bg--52;
+    }
+  }
+  &__list {
+    @include mix.flex(row, center, space-between, 0);
+    transition: 1s;
+    @media (max-width: 550px) {
+      position: fixed;
+      left: -150px;
+      top: -170px;
+      @include mix.flex(column, flex-start, center, 20px);
+      margin-top: 5px;
+      padding: 30px 50px 20px 50px;
+      box-shadow: 0 0 5px 5px $bg--f5;
+      border-radius: 5px;
+      background-color: transparent;
+      backdrop-filter: blur(2px);
+      z-index: 2;
+      &__active {
+        box-shadow: 0 0 5px 5px $bg--f5, inset 0 0 15px 0 $bg--1f;
+        transform: translate(156px, 170px);
+        color: $bg--92 !important;
+      }
+    }
+  }
+  &__link {
+    @include mix.text($bg--22, 12px, 400, 23px, left);
+    padding: 15px 10px;
+    &:hover {
+      border-bottom: 1px solid $bg--f5;
+    }
+  }
+  a {
+    position: relative;
+    transform: scale(2.4) translateY(6px);
+    @media (max-width: 1030px) {
+      transform: scale(1.5) translateX(-10px);
+    }
+  }
+}
+.hform {
+  @include mix.flex(row, stretch, center, 0);
+  max-width: 390px;
+  @media (max-width: 390px) {
+    @include mix.flex(column, stretch, center, 0);
+  }
+  &--label {
+    position: relative;
+    border-radius: 3px 0 0 3px;
+    border: 1px solid $bg--9dd;
+    svg {
+      position: absolute;
+      top: 13px;
+      left: 11px;
+      fill: $bg--9dd;
+      width: 20px;
+      height: 15px;
+    }
+  }
+  &--input {
+    @include mix.outline;
+    @include mix.pholder($bg--44);
+    padding: 10px 0 11px 40px;
+    transition: 0.5s;
+    &::placeholder {
+      @include mix.pholder($bg--eo);
+    }
+    &:focus {
+      @include mix.focus($bg--2b);
+    }
+  }
+  &--button {
+    @include mix.button($bg--b8, $bg--eo);
+    @include mix.outline;
+    transition: 1s;
+    &:hover {
+      @include mix.focus($bg--25);
+    }
+  }
+}
+
+// ***** hero start *****
+
+.hero {
+  background: url("../images/hero--bg.png") no-repeat;
+  background-size: cover;
+  padding: 245px 0 165px;
+  &--body {
+    margin-left: 145px;
+    max-width: 610px;
+    @media (max-width: 720px) {
+      margin: 0;
+    }
+    &__title {
+      @include mix.text($bg--44, 49px, 400, 65px, left);
+      @media (max-width: 464px) {
+        @include mix.text($bg--44, 30px, 400, 55px, left);
+      }
+      span {
+        color: $bg--2b;
+        border-bottom: 2px solid $bg--2b;
+      }
+    }
+    &__text {
+      @include mix.text($bg--44, 19px, 400, 37px, left);
+      margin-bottom: 85px;
+    }
+    &__links {
+      @include mix.flex(row, center, flex-start, 15px);
+      @media (max-width: 470px) {
+        @include mix.flex(column, center, flex-start, 15px);
+      }
+    }
+    &__link {
+      @include mix.flex(column, center, center, 8px);
+      @include mix.btn($bg--f5, 8px 25px 1px 30px);
+      @include mix.text($bg--white, 23px, 400, 23px, left);
+      &:hover {
+        box-shadow: inset 0 0 0 2px $bg--white;
+      }
+      span {
+        @include mix.text($bg--white, 14px, 400, 23px, left);
+      }
+      &:nth-child(2) {
+        @include mix.btn($bg--white, 8px 25px 1px 30px);
+        color: $bg--4d;
+        &:hover {
+          box-shadow: inset 0 0 0 2px $bg--f5;
+        }
+        span {
+          color: $bg--4d;
+        }
+      }
+    }
+  }
+}
+
+// ***** aside start *****
+
+.help {
+  position: relative;
+  background-color: $bg--white;
+  padding: 52px 0 56px;
+  &--body {
+    @include mix.flex(row, center, flex-start, 70px);
+    &__title {
+      @include mix.text($bg--2b, 28px, 400, 39px, left);
+    }
+    &__text {
+      @include mix.text($bg--25, 15px, 400, 23px, left);
+    }
+  }
+  &--card {
+    position: absolute;
+    right: 0;
+    bottom: 0;
+    padding: 37px 215px 39px 45px;
+    width: 600px;
+    @include mix.back;
+    &__title {
+      @include mix.text($bg--white, 24px, 400, 23px, left);
+      margin-bottom: 25px;
+    }
+    &__text {
+      @include mix.text($bg--white, 14px, 400, 23px, left);
+      margin-bottom: 19px;
+    }
+    &__bottom {
+      @include mix.flex(row,center,center,0);
+    }
+    &__image {
+      position: relative;
+      z-index: 1;
+    
+
+          }
+  }
+}
+
+// ***** footer start *****
+
+.footer {
+  @include mix.back;
+  padding: 130px 0 80px;
+  &--body {
+    @include mix.flex(column, flex-start, center, 30px);
+    color: $bg--white;
+    &__head {
+      width: 100%;
+      @include mix.flex(row, center, space-between, 0);
+      margin-bottom: 17px;
+      @media (max-width: 860px) {
+        @include mix.flex(row, flex-start, space-between, 0);
+      }
+      @media (max-width: 600px) {
+        @include mix.flex(column, center, center, 50px);
+      }
+    }
+  }
+  &--main {
+    width: 300px;
+    &__link {
+      svg {
+        fill: $bg--white;
+      }
+    }
+    &__text {
+      @include mix.text($bg--white, 15px, 400, 25px, left);
+      margin-top: 25px;
+    }
+  }
+  &--nav {
+    @include mix.grid(1, 3, 0);
+    width: 50%;
+    @media (max-width: 860px) {
+      @include mix.grid(2, 2, 20px);
+    }
+    @media (max-width: 600px) {
+      width: 100%;
+      @include mix.grid(1, 3, 20px);
+    }
+    @media (max-width: 450px) {
+      @include mix.grid(2, 2, 20px);
+    }
+    @media (max-width: 305px) {
+      @include mix.grid(3, 1, 20px);
+    }
+
+    &__list {
+      @include mix.flex(column, stretch, center, 7px);
+    }
+    &__link {
+      @include mix.text($bg--ab, 14px, 400, 21px, left);
+    }
+    &-title {
+      @include mix.text($bg--white, 18px, 400, 25px, left);
+    }
+  }
+  &--bottom {
+    @include mix.flex(row, center, flex-start, 10px);
+    padding: 30px 0;
+    border-top: 1px solid $bg--f1a;
+    width: 100%;
+    @media (max-width: 450px) {
+      @include mix.flex(column, center, flex-start, 10px);
+    }
+    &__text {
+      @include mix.text($bg--white, 12px, 400, 25px, left);
+      span {
+        color: $bg--f5;
+      }
+    }
+  }
+}

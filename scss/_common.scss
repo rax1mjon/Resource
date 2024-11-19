@@ -1,0 +1,68 @@
+@use "function" as func;
+
+*,
+::before,
+::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+  scroll-behavior: smooth;
+  background-color: #1fdb6a;
+}
+
+.container {
+  $mbpadding: 20;
+  max-width: func.container(1440, 170, $mbpadding);
+  margin: 0 auto;
+  padding: 0 $mbpadding + px;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+  transition: 0.5s;
+  &:hover {
+    text-decoration: underline;
+    transform: scale(1.1);
+  }
+}
+
+$bg--25: #252061;
+$bg--white: #fff;
+$bg--black: #000;
+$bg--ab: #aba8ca;
+$bg--f5: #f55f39;
+$bg--2b: #2bca8b;
+$bg--eo: #e0e0e0;
+$bg--44: #444444;
+$bg--1f: #1fdb6a;
+$bg--52: #524b9a;
+$bg--41: #4163ac;
+$bg--22: #222222;
+$bg--92: #929292;
+$bg--9d: #9da0ac;
+$bg--01a: #0000001a;
+$bg--36: #363636;
+$bg--da: #dadada;
+$bg--e6: #e6e8ee;
+$bg--ee: #eef1f6;
+$bg--18: #183eb6;
+$bg--4d: #4d4d4d;
+$bg--9d: #d9d9d9;
+$bg: #050505;
+$bg: #1c1842;
+$bg: #352f77;
+$bg: #969696;
+$bg: #b8bdc9;
+$bg: #f0f0f0;
+$bg: #f1f1f1;
+$bg: #f56039;
+
