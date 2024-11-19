@@ -33,6 +33,8 @@ $bg--b8: #b8bdc9;
 $bg--f0: #f0f0f0;
 $bg--f1: #f1f1f1;
 $bg--f1a: #ffffff1a;
+$bg--006: #00000066;
+// box-shadow: 6px 6px 13px 0px ;
 
 // ***** header start *****
 
@@ -209,6 +211,11 @@ header {
   padding: 52px 0 56px;
   &--body {
     @include mix.flex(row, center, flex-start, 70px);
+    max-width: 630px;
+    @media (max-width: 415px) {
+    @include mix.flex(column, center, center, 70px);
+
+    }
     &__title {
       @include mix.text($bg--2b, 28px, 400, 39px, left);
     }
@@ -220,9 +227,15 @@ header {
     position: absolute;
     right: 0;
     bottom: 0;
-    padding: 37px 215px 39px 45px;
-    width: 600px;
+    padding: 37px 109px 39px 45px;
+    max-width: 500px;
     @include mix.back;
+    @media (max-width: 485px) {
+      padding: 40px;
+    }
+    @media (max-width: 415px) {
+      display: none;
+    }
     &__title {
       @include mix.text($bg--white, 24px, 400, 23px, left);
       margin-bottom: 25px;
@@ -232,14 +245,32 @@ header {
       margin-bottom: 19px;
     }
     &__bottom {
-      @include mix.flex(row,center,center,0);
+      position: relative;
+      @include mix.flex(row, center, center, 0);
+      height: 80px;
     }
     &__image {
-      position: relative;
+      position: absolute;
+      top: -30px;
       z-index: 1;
-    
-
-          }
+      left: -35px;
+      &:nth-child(2) {
+        left: 15px;
+        top: -18px;
+        z-index: 2;
+      }
+      &:nth-child(3) {
+        left: 80px;
+        z-index: 1;
+      }
+    }
+    &__link {
+      top: 12px;
+      left: 184px;
+      @include mix.btn($bg--2b, 12px 15px);
+      color: $bg--white;
+      box-shadow: 6px 6px 13px 0px $bg--006;
+    }
   }
 }
 
