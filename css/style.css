@@ -108,7 +108,7 @@ header {
     z-index: 2;
   }
   .nav--brand__list__active {
-    box-shadow: 0 0 5px 5px #f55f39, inset 0 0 15px 0 #1fdb6a;
+    box-shadow: 0 0 5px 5px #f55f39, inset 0 0 25px 0 #1fdb6a;
     transform: translate(156px, 170px);
     color: #929292 !important;
   }
