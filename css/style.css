@@ -973,7 +973,7 @@ header {
 }
 .say--girl {
   position: relative;
-  background: url("../images/photo_2024-11-22_14-35-44.jpg") no-repeat;
+  background: url("../images/photo_2024-11-22_14-35-44.jpg") no-repeat center;
   background-size: cover;
   max-width: 460px;
   height: 570px;
