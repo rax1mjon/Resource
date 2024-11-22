@@ -3,41 +3,6 @@
 @use "mixsin" as mix;
 @use "fonts";
 
-$bg--25: #252061;
-$bg--white: #fff;
-$bg--black: #000;
-$bg--ab: #aba8ca;
-$bg--f5: #f55f39;
-$bg--2b: #2bca8b;
-$bg--eo: #e0e0e0;
-$bg--44: #444444;
-$bg--1f: #1fdb6a;
-$bg--52: #524b9a;
-$bg--41: #4163ac;
-$bg--22: #222222;
-$bg--92: #929292;
-$bg--9da: #9da0ac;
-$bg--01a: #0000001a;
-$bg--36: #363636;
-$bg--da: #dadada;
-$bg--e6: #e6e8ee;
-$bg--ee: #eef1f6;
-$bg--18: #183eb6;
-$bg--4d: #4d4d4d;
-$bg--9dd: #d9d9d9;
-$bg--05: #050505;
-$bg--1c: #1c1842;
-$bg--35: #352f77;
-$bg--96: #969696;
-$bg--b8: #b8bdc9;
-$bg--f0: #f0f0f0;
-$bg--f1: #f1f1f1;
-$bg--f1a: #ffffff1a;
-$bg--006: #00000066;
-$bg--f3: #ffffff33;
-$bg--04d: #0000004d;
-// box-shadow: 6px 6px 13px 0px ;
-
 // ***** header start *****
 
 header {
@@ -569,7 +534,193 @@ header {
 
 // ***** say start *****
 
+.say {
+  @include mix.flex(row, flex-start, center, 0);
+  background-color: $bg--white;
+  @media (max-width: 750px) {
+    flex-direction: column;
+    align-items: center;
+  }
+  &--top {
+    width: 50%;
+    transform: translateY(-70px);
+    background-color: $bg--white;
+    @media (max-width: 750px) {
+      width: 100%;
+    }
+    &__wrapper {
+      max-width: 500px;
+      padding: 55px;
+      margin-left: auto;
+    }
+    &__title {
+      @include mix.text($bg--44, 28px, 400, 30px, left);
+      margin-bottom: 49px;
+      span {
+        color: $bg--2b;
+        padding-bottom: 9px;
+        border-bottom: 4px solid $bg--2b;
+      }
+    }
+  }
+  &--girl {
+    position: relative;
+    background: url("../images/photo_2024-11-22_14-35-44.jpg") no-repeat;
+    background-size: cover;
+    max-width: 460px;
+    height: 570px;
+    box-shadow: 21px 21px 70px 0px #00000033;
+    &__learn {
+      position: absolute;
+      bottom: 0;
+      left: -50px;
+      max-width: 275px;
+      padding: 30px;
+      background-color: $bg--white;
+      box-shadow: 14px 14px 40px 0px #0000001a;
+    }
+    &__title {
+      @include mix.text($bg--52, 18px, 400, 25px, left);
+    }
+    &__text {
+      margin: 22px 0 18px;
+      @include mix.text($bg--black, 13px, 400, 23px, left);
+    }
+    &__name {
+      @include mix.text($bg--52, 13px, 400, 23px, left);
+    }
+    &__link {
+      position: absolute;
+      bottom: 35px;
+      right: -10px;
+      padding: 12px 25px;
+      @include mix.text($bg--white, 15px, 400, 23px, left);
+      box-shadow: 7px 7px 20px 0px $bg--04d;
+      background-color: $bg--2b;
+    }
+  }
+  &--kind {
+    width: 50%;
+    background-color: $bg--f0;
+    @media (max-width: 750px) {
+      width: 100%;
+    }
+    &__wrapper {
+      max-width: 400px;
+      padding: 55px;
+      margin-right: auto;
+    }
+    &__list {
+      @include mix.flex(column, stretch, flex-start, 19px);
+    }
+  }
+  &--item {
+    position: relative;
+    padding: 14px 45px 0 0;
+    border-top: 1px solid $bg--da;
+    &:after {
+      content: ">";
+      position: absolute;
+      right: 0;
+      top: 35%;
+      font-weight: 200;
+      font-size: 40px;
+    }
+    &__title {
+      @include mix.text($bg--52, 20px, 400, 25px, left);
+    }
+    &__text {
+      @include mix.text($bg--36, 15px, 400, 23px, left);
+      margin: 8px 0 24px;
+    }
+    &__link {
+      @include mix.text($bg--41, 14px, 400, 23px, left);
+    }
+  }
+  &--kind__link {
+    display: inline-block;
+    margin-top: 30px;
+    @include mix.text($bg--f5, 15px, 400, 23px, left);
+  }
+}
 
+// ***** search start *****
+
+.search {
+  background-color: $bg--white;
+  padding: 100px 0;
+  &--body {
+    width: 100%;
+    @include mix.flex(column, center, center, 63px);
+  }
+  &--top {
+    &__title {
+      display: inline-block;
+      width: 100%;
+      @include mix.text($bg--44, 24px, 400, 49px, center);
+      &big {
+        @include mix.text($bg--44, 52px, 400, 49px, center);
+        margin-bottom: 61px;
+      }
+    }
+  }
+  &--form {
+    max-width: 470px;
+
+    @media (max-width: 390px) {
+      @include mix.flex(column, stretch, center, 0);
+    }
+    &__input {
+      padding: 14px 0 15px 68px;
+      &:focus {
+        @include mix.focus($bg--e6);
+      }
+    }
+    &__btn {
+      @include mix.button($bg--2b, $bg--eo);
+      height: 52px;
+      &:hover {
+        @include mix.focus($bg--35);
+      }
+    }
+  }
+  &--cards {
+    @include mix.flex(row, stretch, center, 26px);
+    flex-wrap: wrap;
+  }
+  &--card {
+    border: 3px solid $bg--e6;
+    &__list {
+      padding: 30px;
+    }
+    &__title {
+      @include mix.text($bg--25, 17px, 400, 23px, left);
+      margin-bottom: 16px;
+    }
+    &__item {
+      position: relative;
+      padding: 4px 0 4px 30px;
+      @include mix.text($bg--f5, 12px, 400, 23px, left);
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 15%;
+        width: 18px;
+        height: 18px;
+        background: url("../images/search--after.svg") no-repeat center;
+        background-size: cover;
+      }
+    }
+    &__link {
+      display: inline-block;
+      width: 100%;
+      padding: 15px 30px;
+      background-color: $bg--ee;
+      @include mix.text($bg--25,11px,400,23px,left);
+    }
+  }
+}
 
 // ***** footer start *****
 
