@@ -34,6 +34,8 @@ $bg--f0: #f0f0f0;
 $bg--f1: #f1f1f1;
 $bg--f1a: #ffffff1a;
 $bg--006: #00000066;
+$bg--f3: #ffffff33;
+$bg--04d: #0000004d;
 // box-shadow: 6px 6px 13px 0px ;
 
 // ***** header start *****
@@ -213,8 +215,7 @@ header {
     @include mix.flex(row, center, flex-start, 70px);
     max-width: 630px;
     @media (max-width: 415px) {
-    @include mix.flex(column, center, center, 70px);
-
+      @include mix.flex(column, center, center, 70px);
     }
     &__title {
       @include mix.text($bg--2b, 28px, 400, 39px, left);
@@ -229,6 +230,7 @@ header {
     bottom: 0;
     padding: 37px 109px 39px 45px;
     max-width: 500px;
+    box-shadow: 7px 7px 50px 0px $bg--006;
     @include mix.back;
     @media (max-width: 485px) {
       padding: 40px;
@@ -273,6 +275,299 @@ header {
     }
   }
 }
+
+// ***** blog start *****
+
+.blog {
+  background-color: $bg--white;
+  &--body {
+    @include mix.flex(column, center, center, 60px);
+    position: relative;
+    padding: 48px 0 547px;
+    &__title {
+      @include mix.text($bg--44, 52px, 400, 49px, left);
+      margin-right: auto;
+      max-width: 500px;
+      span {
+        color: $bg--f5;
+        padding-bottom: 8px;
+        border-bottom: 4px solid $bg--f5;
+      }
+    }
+    &__bottom {
+      position: absolute;
+      bottom: -213px;
+      width: 100%;
+      height: 660px;
+      z-index: 2;
+      background: url("../images/blog--bottom.png");
+      background-position: center;
+      box-shadow: 14px 14px 80px 0px $bg--006;
+    }
+  }
+  &--main {
+    display: grid;
+    grid-template: 1fr / repeat(2, auto);
+    gap: 30px;
+    @media (max-width: 1030px) {
+      grid-template: repeat(2, auto) / 1fr;
+      gap: 80px;
+    }
+    &__cardbig {
+      position: relative;
+      width: 534px;
+      height: 675px;
+      background: url("../images/blog--bigcrd.png") no-repeat;
+      background-size: cover;
+      @media (max-width: 1030px) {
+        width: auto;
+      }
+    }
+    &__cards {
+      @include mix.flex(column, stretch, center, 30px);
+      @media (max-width: 1030px) {
+        align-items: center;
+      }
+    }
+  }
+  &--cardbig {
+    position: absolute;
+    bottom: -33px;
+    left: 0;
+    max-width: 427px;
+    padding: 27px 50px 0 0;
+    background-color: $bg--white;
+    @media (max-width: 420px) {
+      width: auto;
+    }
+
+    h3 {
+      @include mix.text($bg--25, 30px, 400, 38px, left);
+      max-width: 314px;
+    }
+    p {
+      @include mix.text($bg--96, 14px, 400, 23px, left);
+      margin: 13px 0 15px;
+      max-width: 377px;
+    }
+    &__user {
+      @include mix.flex(row, flex-start, flex-start, 10px);
+      &name {
+        @include mix.flex(column, flex-start, center, 1px);
+        span {
+          @include mix.text($bg--25, 15px, 400, 23px, left);
+        }
+      }
+    }
+  }
+
+  &--smallcard {
+    width: 376px;
+    height: 240px;
+    @media (max-width: 420px) {
+      width: 100%;
+    }
+    &:nth-child(1) {
+      background: url("../images/blog--small-crd_1.png") no-repeat;
+      background-size: cover;
+    }
+    &:nth-child(2) {
+      position: relative;
+      background: url("../images/blog--small-crd_2.png") no-repeat;
+      background-size: cover;
+    }
+    &__in {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      padding-top: 20px;
+      width: calc(100% - 75px);
+      background-color: $bg--white;
+      span {
+        @include mix.text($bg--92, 12px, 400, 18px, left);
+        margin-left: 17px;
+      }
+      p {
+        max-width: 222px;
+        @include mix.text($bg--25, 18px, 400, 23px, left);
+      }
+    }
+    &__bottom {
+      @include mix.back;
+      padding: 45px 0 40px 60px;
+      h3 {
+        @include mix.text($bg--white, 28px, 400, 30px, left);
+      }
+      p {
+        margin: 26px 0 19px;
+        max-width: 208px;
+        @include mix.text($bg--white, 14px, 400, 23px, left);
+      }
+      a {
+        @include mix.text($bg--f5, 14px, 400, 23px, left);
+      }
+    }
+  }
+  &--bottom {
+    position: absolute;
+    bottom: 14px;
+    left: 0;
+    background-color: $bg--35;
+    max-width: 530px;
+    padding: 50px;
+    @media (max-width: 482px) {
+      padding: 20px;
+    }
+    h2 {
+      @include mix.text($bg--white, 44px, 400, 60px, left);
+      @media (max-width: 482px) {
+        @include mix.text($bg--white, 30px, 400, 40px, left);
+      }
+    }
+    p {
+      margin: 22px 0 55px;
+      @include mix.text($bg--white, 15px, 400, 23px, left);
+    }
+    a {
+      position: relative;
+      display: inline-block;
+      padding: 9px 30px 4px 80px;
+      @include mix.text($bg--white, 23px, 400, 23px, left);
+      background-color: $bg--2b;
+      @media (max-width: 482px) {
+        padding-left: 60px;
+      }
+      &:before {
+        content: "";
+        position: absolute;
+        top: 19px;
+        left: 25px;
+        display: inline-block;
+        width: 30px;
+        height: 30px;
+        background: url("../images/blog--bttom-icon.svg") no-repeat;
+        background-size: cover;
+      }
+      span {
+        font-size: 14px;
+        line-height: 23px;
+      }
+    }
+  }
+}
+
+// ***** access start *****
+
+.access {
+  @include mix.back;
+  padding: 353px 0 150px;
+  &--body {
+    @include mix.flex(column, center, center, 80px);
+    &__title {
+      @include mix.text($bg--white, 52px, 400px, 49px, center);
+    }
+    &__cards {
+      width: 90%;
+      @include mix.flex(row, center, center, 40px);
+      flex-wrap: wrap;
+    }
+  }
+  &--card {
+    padding: 41px;
+    max-width: 287px;
+    border: 1px solid $bg--f3;
+    box-shadow: 7px 7px 40px 0px $bg--04d;
+    background-color: $bg--white;
+    opacity: 0.8;
+    transition: 0.5s;
+    &:hover {
+      opacity: 1;
+      transform: scale(1.2);
+      .access--card__title {
+        color: $bg--2b;
+      }
+      .access--card__link {
+        background-color: $bg--f5;
+      }
+    }
+    &__title {
+      display: inline-block;
+      @include mix.text($bg--18, 15px, 400, 23px, left);
+      margin-bottom: 24px;
+    }
+    &__cost {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      @include mix.text($bg--black, 55px, 400, 34px, left);
+      span {
+        @include mix.text($bg--black, 14px, 400, 34px, left);
+      }
+    }
+    &__list {
+      margin: 30px 0 30px 30px;
+      @include mix.flex(column, flex-start, flex-start, 10px);
+    }
+    &__item {
+      position: relative;
+      @include mix.text($bg--black, 13px, 400, 20px, left);
+      &:before {
+        position: absolute;
+        top: 0;
+        left: -30px;
+        content: "";
+        width: 15px;
+        height: 15px;
+        background: url("../images/access--true.svg") no-repeat;
+        background-size: cover;
+        display: inline-block;
+      }
+    }
+    &__link {
+      display: inline-block;
+      padding: 12px 25px;
+      @include mix.text($bg--white, 14px, 400, 23px, left);
+      background-color: $bg--2b;
+      margin-bottom: 21px;
+    }
+    &__text {
+      @include mix.text($bg--9da, 11px, 400, 19px, left);
+    }
+  }
+  &--footer {
+    width: 100%;
+    @include mix.flex(row, center, space-around, 20px);
+    &__top {
+      max-width: 487px;
+    }
+    &__titlebox {
+      margin-bottom: 16px;
+      @include mix.flex(row, center, flex-start, 10px);
+      svg {
+        fill: $bg--white;
+      }
+    }
+    &__title {
+      @include mix.text($bg--white, 21px, 400, 23px, left);
+    }
+    &__text {
+      @include mix.text($bg--white, 13px, 400, 21px, left);
+    }
+    &__link {
+      display: inline-block;
+      width: 111px;
+      padding: 15px 20px;
+      @include mix.text($bg--white, 14px, 400, 23px, center);
+      opacity: 0.8;
+      transition: 0.5s;
+      &:hover {
+        box-shadow: inset 0 0 5px 12px $bg--white;
+      }
+    }
+  }
+}
+
+// ***** say start *****
 
 
 
