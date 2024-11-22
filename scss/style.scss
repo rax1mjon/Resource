@@ -3,6 +3,38 @@
 @use "mixsin" as mix;
 @use "fonts";
 
+$bg--25: #252061;
+$bg--white: #fff;
+$bg--black: #000;
+$bg--ab: #aba8ca;
+$bg--f5: #f55f39;
+$bg--2b: #2bca8b;
+$bg--eo: #e0e0e0;
+$bg--44: #444444;
+$bg--1f: #1fdb6a;
+$bg--52: #524b9a;
+$bg--41: #4163ac;
+$bg--22: #222222;
+$bg--92: #929292;
+$bg--9da: #9da0ac;
+$bg--01a: #0000001a;
+$bg--36: #363636;
+$bg--da: #dadada;
+$bg--e6: #e6e8ee;
+$bg--ee: #eef1f6;
+$bg--18: #183eb6;
+$bg--4d: #4d4d4d;
+$bg--9dd: #d9d9d9;
+$bg--35: #352f77;
+$bg--96: #969696;
+$bg--b8: #b8bdc9;
+$bg--f0: #f0f0f0;
+$bg--f1: #f1f1f1;
+$bg--f1a: #ffffff1a;
+$bg--006: #00000066;
+$bg--f3: #ffffff33;
+$bg--04d: #0000004d;
+
 // ***** header start *****
 
 header {
@@ -13,6 +45,7 @@ header {
   background-color: $bg--white;
   box-shadow: 1px 1px 3px 0px $bg--01a;
   z-index: 1111;
+  transition: 0.5s;
 }
 
 .head--body {
@@ -53,7 +86,7 @@ header {
       z-index: 2;
       &__active {
         box-shadow: 0 0 5px 5px $bg--f5, inset 0 0 25px 0 $bg--1f;
-        transform: translate(156px, 170px);
+        transform: translate(156px, 170px) ;
         color: $bg--92 !important;
       }
     }
@@ -97,6 +130,7 @@ header {
     @include mix.pholder($bg--44);
     padding: 10px 0 11px 40px;
     transition: 0.5s;
+    height: 100%;
     &::placeholder {
       @include mix.pholder($bg--eo);
     }
@@ -717,7 +751,7 @@ header {
       width: 100%;
       padding: 15px 30px;
       background-color: $bg--ee;
-      @include mix.text($bg--25,11px,400,23px,left);
+      @include mix.text($bg--25, 11px, 400, 23px, left);
     }
   }
 }
