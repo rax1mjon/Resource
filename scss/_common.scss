@@ -36,10 +36,14 @@ a {
   }
 }
 
+$bg--shadow: #03afff;
+
 .navbar-shrink {
   padding: 40px 0;
-  // background-color: #03afff;
-  box-shadow: inset 0 0 30px 15px #03afff;
+  box-shadow: inset 0 0 30px 15px $bg--shadow;
+  .dark & {
+    box-shadow: inset 0 0 25px 15px hsl(192, 54%, 77%);
+  }
   .nav--brand__list {
     @media (max-width: 550px) {
       transform: translateY(30px);
@@ -54,7 +58,7 @@ a {
   position: fixed;
   bottom: 40px;
   right: 40px;
-  box-shadow: inset 0 0 15px 5px #03afff, 0 0 15px 5px #03afff;
+  box-shadow: inset 0 0 15px 5px $bg--shadow, 0 0 15px 5px $bg--shadow;
   z-index: 30;
   background-color: transparent;
   backdrop-filter: blur(10px);

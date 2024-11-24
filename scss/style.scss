@@ -3,37 +3,76 @@
 @use "mixsin" as mix;
 @use "fonts";
 
-$bg--25: #252061;
-$bg--white: #fff;
-$bg--black: #000;
-$bg--ab: #aba8ca;
-$bg--f5: #f55f39;
-$bg--2b: #2bca8b;
-$bg--eo: #e0e0e0;
-$bg--44: #444444;
-$bg--1f: #1fdb6a;
-$bg--52: #524b9a;
-$bg--41: #4163ac;
-$bg--22: #222222;
-$bg--92: #929292;
-$bg--9da: #9da0ac;
-$bg--01a: #0000001a;
-$bg--36: #363636;
-$bg--da: #dadada;
-$bg--e6: #e6e8ee;
-$bg--ee: #eef1f6;
-$bg--18: #183eb6;
-$bg--4d: #4d4d4d;
-$bg--9dd: #d9d9d9;
-$bg--35: #352f77;
-$bg--96: #969696;
-$bg--b8: #b8bdc9;
-$bg--f0: #f0f0f0;
-$bg--f1: #f1f1f1;
-$bg--f1a: #ffffff1a;
-$bg--006: #00000066;
-$bg--f3: #ffffff33;
-$bg--04d: #0000004d;
+:root {
+  --bg--25: #252061;
+  --bg--white: #fff;
+  --bg--black: #000;
+  --bg--ab: #aba8ca;
+  --bg--f5: #f55f39;
+  --bg--2b: #2bca8b;
+  --bg--eo: #e0e0e0;
+  --bg--44: #444444;
+  --bg--1f: #1fdb6a;
+  --bg--52: #524b9a;
+  --bg--41: #4163ac;
+  --bg--22: #222222;
+  --bg--92: #929292;
+  --bg--9da: #9da0ac;
+  --bg--01a: #0000001a;
+  --bg--36: #363636;
+  --bg--da: #dadada;
+  --bg--e6: #e6e8ee;
+  --bg--ee: #eef1f6;
+  --bg--18: #183eb6;
+  --bg--4d: #4d4d4d;
+  --bg--9dd: #d9d9d9;
+  --bg--35: #352f77;
+  --bg--96: #969696;
+  --bg--b8: #b8bdc9;
+  --bg--f0: #f0f0f0;
+  --bg--f1: #f1f1f1;
+  --bg--f1a: #ffffff1a;
+  --bg--006: #00000066;
+  --bg--f3: #ffffff33;
+  --bg--04d: #0000004d;
+}
+
+
+.dark {
+  --bg--white: #535355;
+  --bg--black: #adadbe;
+  --bg--52: #c7c7ce;
+  --bg--22: #b0adb4;
+  --bg--b8: #9c80e9;
+  --bg--4d: #f5eded;
+  --bg--f5: #e7b5a8;
+  --bg--25: #9189e4;
+  --bg--44: #b8b1b1;
+  // --bg--ab: #aba8ca;
+  // --bg--2b: #2bca8b;
+  // --bg--eo: #e0e0e0;
+  // --bg--1f: #1fdb6a;
+  // --bg--41: #4163ac;
+  // --bg--92: #929292;
+  // --bg--9da: #9da0ac;
+  // --bg--01a: #0000001a;
+  // --bg--36: #363636;
+  // --bg--da: #dadada;
+  // --bg--e6: #e6e8ee;
+  // --bg--ee: #eef1f6;
+  // --bg--18: #183eb6;
+  // --bg--9dd: #d9d9d9;
+  // --bg--35: #352f77;
+  // --bg--96: #969696;
+  // --bg--f0: #f0f0f0;
+  // --bg--f1: #f1f1f1;
+  // --bg--f1a: #ffffff1a;
+  // --bg--006: #00000066;
+  // --bg--f3: #ffffff33;
+  // --bg--04d: #0000004d;
+}
+
+
 
 // ***** header start *****
 
@@ -42,8 +81,8 @@ header {
   top: 0;
   width: 100%;
   padding: 19px 0;
-  background-color: $bg--white;
-  box-shadow: 1px 1px 3px 0px $bg--01a;
+  background-color: var(--bg--white);
+  box-shadow: 1px 1px 3px 0px var(--bg--01a);
   z-index: 1111;
   transition: 0.5s;
 }
@@ -66,7 +105,7 @@ header {
     position: relative;
     z-index: 3;
     svg {
-      fill: $bg--52;
+      fill: var(--bg--52);
     }
   }
   &__list {
@@ -79,23 +118,23 @@ header {
       @include mix.flex(column, flex-start, center, 20px);
       margin-top: 5px;
       padding: 30px 50px 20px 50px;
-      box-shadow: 0 0 5px 5px $bg--f5;
+      box-shadow: 0 0 5px 5px var(--bg--f5);
       border-radius: 5px;
       background-color: transparent;
       backdrop-filter: blur(2px);
       z-index: 2;
       &__active {
-        box-shadow: 0 0 5px 5px $bg--f5, inset 0 0 25px 0 $bg--1f;
-        transform: translate(156px, 170px) ;
-        color: $bg--92 !important;
+        box-shadow: 0 0 5px 5px var(--bg--f5), inset 0 0 25px 0 var(--bg--1f);
+        transform: translate(156px, 170px);
+        color: var(--bg--92) !important;
       }
     }
   }
   &__link {
-    @include mix.text($bg--22, 12px, 400, 23px, left);
+    @include mix.text(var(--bg--22), 12px, 400, 23px, left);
     padding: 15px 10px;
     &:hover {
-      border-bottom: 1px solid $bg--f5;
+      border-bottom: 1px solid var(--bg--f5);
     }
   }
   a {
@@ -106,6 +145,11 @@ header {
     }
   }
 }
+
+.forms {
+  @include mix.flex(row, center, center, 20px);
+}
+
 .hform {
   @include mix.flex(row, stretch, center, 0);
   max-width: 390px;
@@ -115,38 +159,76 @@ header {
   &--label {
     position: relative;
     border-radius: 3px 0 0 3px;
-    border: 1px solid $bg--9dd;
+    border: 1px solid var(--bg--9dd);
     svg {
       position: absolute;
       top: 13px;
       left: 11px;
-      fill: $bg--9dd;
+      fill: var(--bg--9dd);
       width: 20px;
       height: 15px;
     }
   }
   &--input {
     @include mix.outline;
-    @include mix.pholder($bg--44);
+    @include mix.pholder(var(--bg--44));
     padding: 10px 0 11px 40px;
     transition: 0.5s;
     height: 100%;
     &::placeholder {
-      @include mix.pholder($bg--eo);
+      @include mix.pholder(var(--bg--eo));
     }
     &:focus {
-      @include mix.focus($bg--2b);
+      @include mix.focus(var(--bg--2b));
     }
   }
   &--button {
-    @include mix.button($bg--b8, $bg--eo);
+    @include mix.button(var(--bg--b8), var(--bg--eo));
     @include mix.outline;
     transition: 1s;
     &:hover {
-      @include mix.focus($bg--25);
+      @include mix.focus(var(--bg--25));
     }
   }
 }
+
+// **** dark mode ****
+
+.toggle {
+  --size: 2rem;
+
+  appearance: none;
+  outline: none;
+  cursor: pointer;
+
+  width: var(--size);
+  height: var(--size);
+  box-shadow: inset calc(var(--size) * 0.33) calc(var(--size) * -0.25) 0;
+  border-radius: 999px;
+  color: hsl(240, 100%, 95%);
+
+  transition: all 500ms;
+
+  &:checked {
+    --ray-size: calc(var(--size) * -0.4);
+    --offset-orthogonal: calc(var(--size) * 0.65);
+    --offset-diagonal: calc(var(--size) * 0.45);
+
+    transform: scale(0.75);
+    color: hsl(40, 100%, 50%);
+    box-shadow: inset 0 0 0 var(--size),
+      calc(var(--offset-orthogonal) * -1) 0 0 var(--ray-size),
+      var(--offset-orthogonal) 0 0 var(--ray-size),
+      0 calc(var(--offset-orthogonal) * -1) 0 var(--ray-size),
+      0 var(--offset-orthogonal) 0 var(--ray-size),
+      calc(var(--offset-diagonal) * -1) calc(var(--offset-diagonal) * -1) 0
+        var(--ray-size),
+      var(--offset-diagonal) var(--offset-diagonal) 0 var(--ray-size),
+      calc(var(--offset-diagonal) * -1) var(--offset-diagonal) 0 var(--ray-size),
+      var(--offset-diagonal) calc(var(--offset-diagonal) * -1) 0 var(--ray-size);
+  }
+}
+
 
 // ***** hero start *****
 
@@ -161,17 +243,17 @@ header {
       margin: 0;
     }
     &__title {
-      @include mix.text($bg--44, 49px, 400, 65px, left);
+      @include mix.text(var(--bg--44), 49px, 400, 65px, left);
       @media (max-width: 464px) {
-        @include mix.text($bg--44, 30px, 400, 55px, left);
+        @include mix.text(var(--bg--44), 30px, 400, 55px, left);
       }
       span {
-        color: $bg--2b;
-        border-bottom: 2px solid $bg--2b;
+        color: var(--bg--2b);
+        border-bottom: 2px solid var(--bg--2b);
       }
     }
     &__text {
-      @include mix.text($bg--44, 19px, 400, 37px, left);
+      @include mix.text(var(--bg--44), 19px, 400, 37px, left);
       margin-bottom: 85px;
     }
     &__links {
@@ -182,22 +264,22 @@ header {
     }
     &__link {
       @include mix.flex(column, center, center, 8px);
-      @include mix.btn($bg--f5, 8px 25px 1px 30px);
-      @include mix.text($bg--white, 23px, 400, 23px, left);
+      @include mix.btn(var(--bg--f5), 8px 25px 1px 30px);
+      @include mix.text(var(--bg--white), 23px, 400, 23px, left);
       &:hover {
-        box-shadow: inset 0 0 0 2px $bg--white;
+        box-shadow: inset 0 0 0 2px var(--bg--white);
       }
       span {
-        @include mix.text($bg--white, 14px, 400, 23px, left);
+        @include mix.text(var(--bg--white), 14px, 400, 23px, left);
       }
       &:nth-child(2) {
-        @include mix.btn($bg--white, 8px 25px 1px 30px);
-        color: $bg--4d;
+        @include mix.btn(var(--bg--white), 8px 25px 1px 30px);
+        color: var(--bg--4d);
         &:hover {
-          box-shadow: inset 0 0 0 2px $bg--f5;
+          box-shadow: inset 0 0 0 2px var(--bg--f5);
         }
         span {
-          color: $bg--4d;
+          color: var(--bg--4d);
         }
       }
     }
@@ -206,9 +288,16 @@ header {
 
 // ***** aside start *****
 
+
+.dark .help--card{
+ --bg--white: #b8b2b2;
+ --bg--2b: #35916c;
+}
+  
+
 .help {
   position: relative;
-  background-color: $bg--white;
+  background-color: var(--bg--white);
   padding: 52px 0 56px;
   &--body {
     @include mix.flex(row, center, flex-start, 70px);
@@ -217,10 +306,10 @@ header {
       @include mix.flex(column, center, center, 70px);
     }
     &__title {
-      @include mix.text($bg--2b, 28px, 400, 39px, left);
+      @include mix.text(var(--bg--2b), 28px, 400, 39px, left);
     }
     &__text {
-      @include mix.text($bg--25, 15px, 400, 23px, left);
+      @include mix.text(var(--bg--25), 15px, 400, 23px, left);
     }
   }
   &--card {
@@ -229,7 +318,7 @@ header {
     bottom: 0;
     padding: 37px 109px 39px 45px;
     max-width: 500px;
-    box-shadow: 7px 7px 50px 0px $bg--006;
+    box-shadow: 7px 7px 50px 0px var(--bg--006);
     @include mix.back;
     @media (max-width: 485px) {
       padding: 40px;
@@ -238,11 +327,11 @@ header {
       display: none;
     }
     &__title {
-      @include mix.text($bg--white, 24px, 400, 23px, left);
+      @include mix.text(var(--bg--white), 24px, 400, 23px, left);
       margin-bottom: 25px;
     }
     &__text {
-      @include mix.text($bg--white, 14px, 400, 23px, left);
+      @include mix.text(var(--bg--white), 14px, 400, 23px, left);
       margin-bottom: 19px;
     }
     &__bottom {
@@ -268,9 +357,9 @@ header {
     &__link {
       top: 12px;
       left: 184px;
-      @include mix.btn($bg--2b, 12px 15px);
-      color: $bg--white;
-      box-shadow: 6px 6px 13px 0px $bg--006;
+      @include mix.btn(var(--bg--2b), 12px 15px);
+      color: var(--bg--white);
+      box-shadow: 6px 6px 13px 0px var(--bg--006);
     }
   }
 }
@@ -278,19 +367,19 @@ header {
 // ***** blog start *****
 
 .blog {
-  background-color: $bg--white;
+  background-color: var(--bg--white);
   &--body {
     @include mix.flex(column, center, center, 60px);
     position: relative;
     padding: 48px 0 547px;
     &__title {
-      @include mix.text($bg--44, 52px, 400, 49px, left);
+      @include mix.text(var(--bg--44), 52px, 400, 49px, left);
       margin-right: auto;
       max-width: 500px;
       span {
-        color: $bg--f5;
+        color: var(--bg--f5);
         padding-bottom: 8px;
-        border-bottom: 4px solid $bg--f5;
+        border-bottom: 4px solid var(--bg--f5);
       }
     }
     &__bottom {
@@ -301,7 +390,7 @@ header {
       z-index: 2;
       background: url("../images/blog--bottom.png");
       background-position: center;
-      box-shadow: 14px 14px 80px 0px $bg--006;
+      box-shadow: 14px 14px 80px 0px var(--bg--006);
     }
   }
   &--main {
@@ -321,12 +410,16 @@ header {
       @media (max-width: 1030px) {
         width: auto;
       }
+      .dark & {
+        box-shadow: 0 0 15px 20px #797676;
+      }
     }
     &__cards {
       @include mix.flex(column, stretch, center, 30px);
       @media (max-width: 1030px) {
         align-items: center;
       }
+      
     }
   }
   &--cardbig {
@@ -335,17 +428,19 @@ header {
     left: 0;
     max-width: 427px;
     padding: 27px 50px 0 0;
-    background-color: $bg--white;
+    background-color: var(--bg--white);
     @media (max-width: 420px) {
       width: auto;
     }
-
+    .dark & {
+        box-shadow: 0 0 15px 20px #797676;
+      }
     h3 {
-      @include mix.text($bg--25, 30px, 400, 38px, left);
+      @include mix.text(var(--bg--25), 30px, 400, 38px, left);
       max-width: 314px;
     }
     p {
-      @include mix.text($bg--96, 14px, 400, 23px, left);
+      @include mix.text(var(--bg--96), 14px, 400, 23px, left);
       margin: 13px 0 15px;
       max-width: 377px;
     }
@@ -354,7 +449,7 @@ header {
       &name {
         @include mix.flex(column, flex-start, center, 1px);
         span {
-          @include mix.text($bg--25, 15px, 400, 23px, left);
+          @include mix.text(var(--bg--25), 15px, 400, 23px, left);
         }
       }
     }
@@ -366,6 +461,9 @@ header {
     @media (max-width: 420px) {
       width: 100%;
     }
+    .dark & {
+        box-shadow: 0 0 15px 20px #797676;
+      }
     &:nth-child(1) {
       background: url("../images/blog--small-crd_1.png") no-repeat;
       background-size: cover;
@@ -381,29 +479,32 @@ header {
       left: 0;
       padding-top: 20px;
       width: calc(100% - 75px);
-      background-color: $bg--white;
+      background-color: var(--bg--white);
+      .dark & {
+        box-shadow: 0 0 15px 20px #797676;
+      }
       span {
-        @include mix.text($bg--92, 12px, 400, 18px, left);
+        @include mix.text(var(--bg--92), 12px, 400, 18px, left);
         margin-left: 17px;
       }
       p {
         max-width: 222px;
-        @include mix.text($bg--25, 18px, 400, 23px, left);
+        @include mix.text(var(--bg--25), 18px, 400, 23px, left);
       }
     }
     &__bottom {
       @include mix.back;
       padding: 45px 0 40px 60px;
       h3 {
-        @include mix.text($bg--white, 28px, 400, 30px, left);
+        @include mix.text(#fff, 28px, 400, 30px, left);
       }
       p {
         margin: 26px 0 19px;
         max-width: 208px;
-        @include mix.text($bg--white, 14px, 400, 23px, left);
+        @include mix.text(#fff, 14px, 400, 23px, left);
       }
       a {
-        @include mix.text($bg--f5, 14px, 400, 23px, left);
+        @include mix.text(var(--bg--f5), 14px, 400, 23px, left);
       }
     }
   }
@@ -411,28 +512,28 @@ header {
     position: absolute;
     bottom: 14px;
     left: 0;
-    background-color: $bg--35;
+    background-color: var(--bg--35);
     max-width: 530px;
     padding: 50px;
     @media (max-width: 482px) {
       padding: 20px;
     }
     h2 {
-      @include mix.text($bg--white, 44px, 400, 60px, left);
+      @include mix.text(#fff, 44px, 400, 60px, left);
       @media (max-width: 482px) {
-        @include mix.text($bg--white, 30px, 400, 40px, left);
+        @include mix.text(#fff, 30px, 400, 40px, left);
       }
     }
     p {
       margin: 22px 0 55px;
-      @include mix.text($bg--white, 15px, 400, 23px, left);
+      @include mix.text(#fff, 15px, 400, 23px, left);
     }
     a {
       position: relative;
       display: inline-block;
       padding: 9px 30px 4px 80px;
-      @include mix.text($bg--white, 23px, 400, 23px, left);
-      background-color: $bg--2b;
+      @include mix.text(#fff, 23px, 400, 23px, left);
+      background-color: var(--bg--2b);
       @media (max-width: 482px) {
         padding-left: 60px;
       }
@@ -457,13 +558,17 @@ header {
 
 // ***** access start *****
 
+.dark .access--footer {
+  --bg--white : #bbb0b0;
+}
+
 .access {
   @include mix.back;
   padding: 353px 0 150px;
   &--body {
     @include mix.flex(column, center, center, 80px);
     &__title {
-      @include mix.text($bg--white, 52px, 400px, 49px, center);
+      @include mix.text(var(--bg--white), 52px, 400px, 49px, center);
     }
     &__cards {
       width: 90%;
@@ -474,33 +579,33 @@ header {
   &--card {
     padding: 41px;
     max-width: 287px;
-    border: 1px solid $bg--f3;
-    box-shadow: 7px 7px 40px 0px $bg--04d;
-    background-color: $bg--white;
+    border: 1px solid var(--bg--f3);
+    box-shadow: 7px 7px 40px 0px var(--bg--04d);
+    background-color: var(--bg--white);
     opacity: 0.8;
     transition: 0.5s;
     &:hover {
       opacity: 1;
       transform: scale(1.2);
       .access--card__title {
-        color: $bg--2b;
+        color: var(--bg--2b);
       }
       .access--card__link {
-        background-color: $bg--f5;
+        background-color: var(--bg--f5);
       }
     }
     &__title {
       display: inline-block;
-      @include mix.text($bg--18, 15px, 400, 23px, left);
+      @include mix.text(var(--bg--18), 15px, 400, 23px, left);
       margin-bottom: 24px;
     }
     &__cost {
       display: flex;
       align-items: center;
       gap: 5px;
-      @include mix.text($bg--black, 55px, 400, 34px, left);
+      @include mix.text(var(--bg--black), 55px, 400, 34px, left);
       span {
-        @include mix.text($bg--black, 14px, 400, 34px, left);
+        @include mix.text(var(--bg--black), 14px, 400, 34px, left);
       }
     }
     &__list {
@@ -509,7 +614,7 @@ header {
     }
     &__item {
       position: relative;
-      @include mix.text($bg--black, 13px, 400, 20px, left);
+      @include mix.text(var(--bg--black), 13px, 400, 20px, left);
       &:before {
         position: absolute;
         top: 0;
@@ -525,12 +630,12 @@ header {
     &__link {
       display: inline-block;
       padding: 12px 25px;
-      @include mix.text($bg--white, 14px, 400, 23px, left);
-      background-color: $bg--2b;
+      @include mix.text(var(--bg--white), 14px, 400, 23px, left);
+      background-color: var(--bg--2b);
       margin-bottom: 21px;
     }
     &__text {
-      @include mix.text($bg--9da, 11px, 400, 19px, left);
+      @include mix.text(var(--bg--9da), 11px, 400, 19px, left);
     }
   }
   &--footer {
@@ -543,24 +648,24 @@ header {
       margin-bottom: 16px;
       @include mix.flex(row, center, flex-start, 10px);
       svg {
-        fill: $bg--white;
+        fill: var(--bg--white);
       }
     }
     &__title {
-      @include mix.text($bg--white, 21px, 400, 23px, left);
+      @include mix.text(var(--bg--white), 21px, 400, 23px, left);
     }
     &__text {
-      @include mix.text($bg--white, 13px, 400, 21px, left);
+      @include mix.text(var(--bg--white), 13px, 400, 21px, left);
     }
     &__link {
       display: inline-block;
       width: 111px;
       padding: 15px 20px;
-      @include mix.text($bg--white, 14px, 400, 23px, center);
+      @include mix.text(var(--bg--white), 14px, 400, 23px, center);
       opacity: 0.8;
       transition: 0.5s;
       &:hover {
-        box-shadow: inset 0 0 5px 12px $bg--white;
+        box-shadow: inset 0 0 5px 12px var(--bg--white);
       }
     }
   }
@@ -570,7 +675,7 @@ header {
 
 .say {
   @include mix.flex(row, flex-start, center, 0);
-  background-color: $bg--white;
+  background-color: var(--bg--white);
   @media (max-width: 750px) {
     flex-direction: column;
     align-items: center;
@@ -578,7 +683,7 @@ header {
   &--top {
     width: 50%;
     transform: translateY(-70px);
-    background-color: $bg--white;
+    background-color: var(--bg--white);
     @media (max-width: 750px) {
       width: 100%;
     }
@@ -588,12 +693,12 @@ header {
       margin-left: auto;
     }
     &__title {
-      @include mix.text($bg--44, 28px, 400, 30px, left);
+      @include mix.text(var(--bg--44), 28px, 400, 30px, left);
       margin-bottom: 49px;
       span {
-        color: $bg--2b;
+        color: var(--bg--2b);
         padding-bottom: 9px;
-        border-bottom: 4px solid $bg--2b;
+        border-bottom: 4px solid var(--bg--2b);
       }
     }
   }
@@ -610,32 +715,32 @@ header {
       left: -50px;
       max-width: 275px;
       padding: 30px;
-      background-color: $bg--white;
+      background-color: var(--bg--white);
       box-shadow: 14px 14px 40px 0px #0000001a;
     }
     &__title {
-      @include mix.text($bg--52, 18px, 400, 25px, left);
+      @include mix.text(var(--bg--52), 18px, 400, 25px, left);
     }
     &__text {
       margin: 22px 0 18px;
-      @include mix.text($bg--black, 13px, 400, 23px, left);
+      @include mix.text(var(--bg--black), 13px, 400, 23px, left);
     }
     &__name {
-      @include mix.text($bg--52, 13px, 400, 23px, left);
+      @include mix.text(var(--bg--52), 13px, 400, 23px, left);
     }
     &__link {
       position: absolute;
       bottom: 35px;
       right: -10px;
       padding: 12px 25px;
-      @include mix.text($bg--white, 15px, 400, 23px, left);
-      box-shadow: 7px 7px 20px 0px $bg--04d;
-      background-color: $bg--2b;
+      @include mix.text(var(--bg--white), 15px, 400, 23px, left);
+      box-shadow: 7px 7px 20px 0px var(--bg--04d);
+      background-color: var(--bg--2b);
     }
   }
   &--kind {
     width: 50%;
-    background-color: $bg--f0;
+    background-color: var(--bg--f0);
     @media (max-width: 750px) {
       width: 100%;
     }
@@ -651,7 +756,7 @@ header {
   &--item {
     position: relative;
     padding: 14px 45px 0 0;
-    border-top: 1px solid $bg--da;
+    border-top: 1px solid var(--bg--da);
     &:after {
       content: ">";
       position: absolute;
@@ -661,27 +766,27 @@ header {
       font-size: 40px;
     }
     &__title {
-      @include mix.text($bg--52, 20px, 400, 25px, left);
+      @include mix.text(var(--bg--52), 20px, 400, 25px, left);
     }
     &__text {
-      @include mix.text($bg--36, 15px, 400, 23px, left);
+      @include mix.text(var(--bg--36), 15px, 400, 23px, left);
       margin: 8px 0 24px;
     }
     &__link {
-      @include mix.text($bg--41, 14px, 400, 23px, left);
+      @include mix.text(var(--bg--41), 14px, 400, 23px, left);
     }
   }
   &--kind__link {
     display: inline-block;
     margin-top: 30px;
-    @include mix.text($bg--f5, 15px, 400, 23px, left);
+    @include mix.text(var(--bg--f5), 15px, 400, 23px, left);
   }
 }
 
 // ***** search start *****
 
 .search {
-  background-color: $bg--white;
+  background-color: var(--bg--white);
   padding: 100px 0;
   &--body {
     width: 100%;
@@ -691,9 +796,9 @@ header {
     &__title {
       display: inline-block;
       width: 100%;
-      @include mix.text($bg--44, 24px, 400, 49px, center);
+      @include mix.text(var(--bg--44), 24px, 400, 49px, center);
       &big {
-        @include mix.text($bg--44, 52px, 400, 49px, center);
+        @include mix.text(var(--bg--44), 52px, 400, 49px, center);
         margin-bottom: 61px;
       }
     }
@@ -707,14 +812,14 @@ header {
     &__input {
       padding: 14px 0 15px 68px;
       &:focus {
-        @include mix.focus($bg--e6);
+        @include mix.focus(var(--bg--e6));
       }
     }
     &__btn {
-      @include mix.button($bg--2b, $bg--eo);
+      @include mix.button(var(--bg--2b), var(--bg--eo));
       height: 52px;
       &:hover {
-        @include mix.focus($bg--35);
+        @include mix.focus(var(--bg--35));
       }
     }
   }
@@ -723,18 +828,18 @@ header {
     flex-wrap: wrap;
   }
   &--card {
-    border: 3px solid $bg--e6;
+    border: 3px solid var(--bg--e6);
     &__list {
       padding: 30px;
     }
     &__title {
-      @include mix.text($bg--25, 17px, 400, 23px, left);
+      @include mix.text(var(--bg--25), 17px, 400, 23px, left);
       margin-bottom: 16px;
     }
     &__item {
       position: relative;
       padding: 4px 0 4px 30px;
-      @include mix.text($bg--f5, 12px, 400, 23px, left);
+      @include mix.text(var(--bg--f5), 12px, 400, 23px, left);
       &:before {
         content: "";
         position: absolute;
@@ -750,20 +855,24 @@ header {
       display: inline-block;
       width: 100%;
       padding: 15px 30px;
-      background-color: $bg--ee;
-      @include mix.text($bg--25, 11px, 400, 23px, left);
+      background-color: var(--bg--ee);
+      @include mix.text(var(--bg--25), 11px, 400, 23px, left);
     }
   }
 }
 
 // ***** footer start *****
 
+.dark .footer {
+  --bg--white: #c5c0d1;
+}
+
 .footer {
   @include mix.back;
   padding: 130px 0 80px;
   &--body {
     @include mix.flex(column, flex-start, center, 30px);
-    color: $bg--white;
+    color: var(--bg--white);
     &__head {
       width: 100%;
       @include mix.flex(row, center, space-between, 0);
@@ -780,11 +889,11 @@ header {
     width: 300px;
     &__link {
       svg {
-        fill: $bg--white;
+        fill: var(--bg--white);
       }
     }
     &__text {
-      @include mix.text($bg--white, 15px, 400, 25px, left);
+      @include mix.text(var(--bg--white), 15px, 400, 25px, left);
       margin-top: 25px;
     }
   }
@@ -809,24 +918,24 @@ header {
       @include mix.flex(column, stretch, center, 7px);
     }
     &__link {
-      @include mix.text($bg--ab, 14px, 400, 21px, left);
+      @include mix.text(var(--bg--ab), 14px, 400, 21px, left);
     }
     &-title {
-      @include mix.text($bg--white, 18px, 400, 25px, left);
+      @include mix.text(var(--bg--white), 18px, 400, 25px, left);
     }
   }
   &--bottom {
     @include mix.flex(row, center, flex-start, 10px);
     padding: 30px 0;
-    border-top: 1px solid $bg--f1a;
+    border-top: 1px solid var(--bg--f1) a;
     width: 100%;
     @media (max-width: 450px) {
       @include mix.flex(column, center, flex-start, 10px);
     }
     &__text {
-      @include mix.text($bg--white, 12px, 400, 25px, left);
+      @include mix.text(var(--bg--white), 12px, 400, 25px, left);
       span {
-        color: $bg--f5;
+        color: var(--bg--f5);
       }
     }
   }

@@ -29,6 +29,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+// dark-light
+
+const body = document.body;
+const modeToggle = document.querySelector(".toggle");
+
+modeToggle.addEventListener("click", () => {
+  body.classList.toggle("dark");
+});
+
 window.addEventListener("scroll", function () {
   toggleBacktop();
 });
