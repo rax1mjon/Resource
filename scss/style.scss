@@ -37,7 +37,6 @@
   --bg--04d: #0000004d;
 }
 
-
 .dark {
   --bg--white: #535355;
   --bg--black: #adadbe;
@@ -71,8 +70,6 @@
   // --bg--f3: #ffffff33;
   // --bg--04d: #0000004d;
 }
-
-
 
 // ***** header start *****
 
@@ -229,7 +226,6 @@ header {
   }
 }
 
-
 // ***** hero start *****
 
 .hero {
@@ -288,12 +284,10 @@ header {
 
 // ***** aside start *****
 
-
-.dark .help--card{
- --bg--white: #b8b2b2;
- --bg--2b: #35916c;
+.dark .help--card {
+  --bg--white: #b8b2b2;
+  --bg--2b: #35916c;
 }
-  
 
 .help {
   position: relative;
@@ -419,7 +413,6 @@ header {
       @media (max-width: 1030px) {
         align-items: center;
       }
-      
     }
   }
   &--cardbig {
@@ -433,8 +426,8 @@ header {
       width: auto;
     }
     .dark & {
-        box-shadow: 0 0 15px 20px #797676;
-      }
+      box-shadow: 0 0 15px 20px #797676;
+    }
     h3 {
       @include mix.text(var(--bg--25), 30px, 400, 38px, left);
       max-width: 314px;
@@ -462,8 +455,8 @@ header {
       width: 100%;
     }
     .dark & {
-        box-shadow: 0 0 15px 20px #797676;
-      }
+      box-shadow: 0 0 15px 20px #797676;
+    }
     &:nth-child(1) {
       background: url("../images/blog--small-crd_1.png") no-repeat;
       background-size: cover;
@@ -559,7 +552,7 @@ header {
 // ***** access start *****
 
 .dark .access--footer {
-  --bg--white : #bbb0b0;
+  --bg--white: #bbb0b0;
 }
 
 .access {
